@@ -1,0 +1,389 @@
+/* ============================================================
+   Polideportivo Martos — Hoja de estilos principal
+   Responsive: mobile-first
+   ============================================================ */
+
+/* ---------- Reset y variables ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --verde:       #2e7d32;
+    --verde-claro: #43a047;
+    --verde-bg:    #e8f5e9;
+    --azul:        #1565c0;
+    --azul-claro:  #1e88e5;
+    --rojo:        #c62828;
+    --rojo-bg:     #ffebee;
+    --naranja:     #e65100;
+    --gris-oscuro: #212121;
+    --gris-medio:  #616161;
+    --gris-claro:  #f5f5f5;
+    --blanco:      #ffffff;
+    --sombra:      0 2px 12px rgba(0,0,0,0.10);
+    --radio:       10px;
+    --fuente:      'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--fuente);
+    background: var(--gris-claro);
+    color: var(--gris-oscuro);
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ---------- Pantalla de login ---------- */
+.pagina-login {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #1565c0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.login-icono {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.login-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.login-header p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.login-card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    padding: 32px 28px;
+    box-shadow: var(--sombra);
+}
+
+.login-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--gris-oscuro);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--gris-medio);
+}
+
+.login-footer a {
+    color: var(--verde);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-footer a:hover { text-decoration: underline; }
+
+/* ---------- Formularios ---------- */
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--gris-oscuro);
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo input[type="tel"],
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--fuente);
+    transition: border-color 0.2s;
+    background: var(--blanco);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.12);
+}
+
+.input-password {
+    position: relative;
+}
+
+.input-password input {
+    padding-right: 44px;
+}
+
+.btn-ojo {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+}
+
+.campo-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.enlace-secundario {
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 0.88rem;
+}
+
+.enlace-secundario:hover { text-decoration: underline; }
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--fuente);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn-primario {
+    background: var(--verde);
+    color: white;
+}
+
+.btn-primario:hover { background: var(--verde-claro); }
+
+.btn-secundario {
+    background: var(--gris-claro);
+    color: var(--gris-oscuro);
+    border: 1.5px solid #ccc;
+}
+
+.btn-secundario:hover { background: #e0e0e0; }
+
+.btn-peligro {
+    background: var(--rojo);
+    color: white;
+}
+
+.btn-peligro:hover { background: #b71c1c; }
+
+.btn-bloque { width: 100%; }
+
+/* ---------- Alertas ---------- */
+.alerta {
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.alerta-error {
+    background: var(--rojo-bg);
+    color: var(--rojo);
+    border-left: 4px solid var(--rojo);
+}
+
+.alerta-exito {
+    background: var(--verde-bg);
+    color: var(--verde);
+    border-left: 4px solid var(--verde);
+}
+
+.alerta-info {
+    background: #e3f2fd;
+    color: var(--azul);
+    border-left: 4px solid var(--azul);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: var(--verde);
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-marca {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.navbar-nav a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.navbar-nav a:hover { background: rgba(255,255,255,0.15); }
+
+/* ---------- Contenedor principal ---------- */
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* ---------- Tarjetas ---------- */
+.card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    padding: 24px;
+    box-shadow: var(--sombra);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--verde);
+    border-bottom: 2px solid var(--verde-bg);
+    padding-bottom: 8px;
+}
+
+/* ---------- Tabla de reservas ---------- */
+.tabla-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.tabla-reservas th {
+    background: var(--verde);
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tabla-reservas td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-reservas tr:hover td { background: var(--verde-bg); }
+
+/* ---------- Grid de disponibilidad ---------- */
+.grid-disponibilidad {
+    overflow-x: auto;
+}
+
+.grid-disponibilidad table {
+    border-collapse: collapse;
+    min-width: 600px;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.grid-disponibilidad th {
+    background: var(--gris-oscuro);
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.grid-disponibilidad td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    text-align: center;
+}
+
+.celda-libre    { background: #c8e6c9; color: #1b5e20; cursor: pointer; }
+.celda-libre:hover { background: #a5d6a7; }
+.celda-ocupada  { background: #ffcdd2; color: #b71c1c; }
+.celda-propia   { background: #fff9c4; color: #f57f17; }
+
+/* ---------- Badge de estado ---------- */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-verde  { background: var(--verde-bg);  color: var(--verde); }
+.badge-rojo   { background: var(--rojo-bg);   color: var(--rojo); }
+.badge-naranja { background: #fff3e0; color: var(--naranja); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .navbar-nav a span { display: none; }
+    .campo-fila { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .login-card { padding: 24px 16px; }
+    .tabla-reservas { font-size: 0.82rem; }
+    .tabla-reservas th, .tabla-reservas td { padding: 7px 8px; }
+}
